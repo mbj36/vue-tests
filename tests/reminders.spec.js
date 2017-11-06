@@ -9,4 +9,15 @@ describe('Reminders', () => {
 
         expect(wrapper.contains('ul')).toBe(false)
     })
+
+    it('can add reminders', () => {
+        let wrapper = mount(Reminders)
+
+        let newReminder = wrapper.find('.new-reminder')
+
+        newReminder.element.value = 'Go to the store'
+        newReminder.trigger('input')
+        wrapper.find('button').trigger('click')
+        expect(wrapper.find('ul').text()).toContain('Go to the store')
+    })
 })
