@@ -16,7 +16,7 @@ describe('CouponCode', () => {
         expect(wrapper.contains('input.coupon-code')).toBe(true)
     })
 
-    it.only('validates a user-provided coupon code', () => {
+    it('validates a user-provided coupon code', () => {
         let couponCode = wrapper.find('input.coupon-code')
         couponCode.element.value = '500OFF'
         couponCode.trigger('input');
